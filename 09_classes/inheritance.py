@@ -36,8 +36,14 @@ class Doctor:
         self.specialization = specialization
 
     def favorite_specialization(self):
-        print(f'I am {self.specialization}.')  
+        print(f'I am {self.specialization}.')
         
+        
+class ProgrammingPhilosopher(Programmer, Philosopher):
+    
+    def __init__(self,  name: str, born: int, language: str, philosophy: str):
+        Programmer.__init__(self, name, born, language)
+        Philosopher.__init__(self, name, born, philosophy)
         
 if __name__ == '__main__':
     adam = Person('Adam', -4000)
@@ -51,4 +57,8 @@ if __name__ == '__main__':
     popov = Doctor('Popov', 1867, 'therapist')
     popov.person.introduce()
     popov.favorite_specialization()
+    turing = ProgrammingPhilosopher('Alan Turing', 1912, 'Turing', 'computable thinking')
+    turing.introduce()
+    turing.favorite_language()
+    turing. favorite_philosophy()
     
